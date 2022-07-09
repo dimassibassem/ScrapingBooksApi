@@ -5,11 +5,7 @@
     <projectFile profileName="IIS Express">API/API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50b4690-5f7d-4c5f-b882-d5d7cc9f00eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/API/FileContentIndex/6a8b8a95-bb49-4b05-b8aa-f029ca97a7a7.vsidx" beforeDir="false" />
-    </list>
+    <list default="true" id="a50b4690-5f7d-4c5f-b882-d5d7cc9f00eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657313151945</updated>
-      <workItem from="1657313152966" duration="12952000" />
+      <workItem from="1657313152966" duration="13279000" />
     </task>
     <task id="LOCAL-00001" summary="making some fixes">
       <created>1657395360422</created>
@@ -89,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657395438747</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding Readme">
+      <created>1657396991356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657396991356</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +104,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="making some fixes" />
     <MESSAGE value="facing CAPTCHA problem with cairn" />
-    <option name="LAST_COMMIT_MESSAGE" value="facing CAPTCHA problem with cairn" />
+    <MESSAGE value="adding Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding Readme" />
   </component>
 </project>

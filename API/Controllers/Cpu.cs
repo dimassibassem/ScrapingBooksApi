@@ -27,17 +27,18 @@ namespace API.Controllers
                 button.Click();
 
                 System.Threading.Thread.Sleep(5000);
-                Console.WriteLine("here");
                 var cover = driver.FindElement(By.ClassName("attachment-shop_single")).GetAttribute("src");
-                var ISBN = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p[3]"));
-                var title = driver.FindElement(By.XPath("//div[1]/div[2]/div[1]/h1"));
-                var editor = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p/strong"));
+                var ISBN = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p[3]")).Text;
+                ISBN = ISBN.Substring(7);
+                var title = driver.FindElement(By.XPath("//div[1]/div[2]/div[1]/h1")).Text;
+                var editor = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p/strong")).Text;
                 var result = new {cover, editor, title, ISBN};
                 driver.Quit();
                 return Ok(result);
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 var error = new {error = "Book not found"};
                 driver.Quit();
                 return Ok(error);

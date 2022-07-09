@@ -45,9 +45,7 @@ namespace API.Controllers
             {
                 driver.Quit();
                 var error = new
-                {
-                    error = "Book not found",
-                };
+                {error = "Book not found"};
                 return Ok(error);
             }
         }

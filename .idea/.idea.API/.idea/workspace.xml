@@ -69,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657313151945</updated>
-      <workItem from="1657313152966" duration="13279000" />
+      <workItem from="1657313152966" duration="13587000" />
     </task>
     <task id="LOCAL-00001" summary="making some fixes">
       <created>1657395360422</created>
@@ -92,7 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657396991356</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Readme">
+      <created>1657397219361</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657397219361</updated>
+    </task>
+    <task id="LOCAL-00005" summary="delete readme.md">
+      <created>1657397301849</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657397301849</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +119,8 @@
     <MESSAGE value="making some fixes" />
     <MESSAGE value="facing CAPTCHA problem with cairn" />
     <MESSAGE value="adding Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding Readme" />
+    <MESSAGE value="Readme" />
+    <MESSAGE value="delete readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete readme.md" />
   </component>
 </project>

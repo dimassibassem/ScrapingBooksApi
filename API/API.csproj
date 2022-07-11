@@ -11,4 +11,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controllers\CairnLoginAndScrape.cs" />
+  </ItemGroup>
+
 </Project>

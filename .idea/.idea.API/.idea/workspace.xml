@@ -6,23 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a50b4690-5f7d-4c5f-b882-d5d7cc9f00eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/API/FileContentIndex/2f556927-466c-46ab-9f04-ef116709f1a9.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/API/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/API/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.metadata.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.projects.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/API.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/AbeBooks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AbeBooks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/AlManhal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AlManhal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/BookFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/BookFinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/CairnLoginAndScrape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/CairnLoginAndScrape.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/Cpu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/Cpu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/amazon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/amazon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657313151945</updated>
       <workItem from="1657313152966" duration="13801000" />
-      <workItem from="1657526787402" duration="19988000" />
+      <workItem from="1657526787402" duration="20427000" />
     </task>
     <task id="LOCAL-00001" summary="making some fixes">
       <created>1657395360422</created>
@@ -132,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657397508232</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adding some error handling">
+      <created>1657547386366</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657547386366</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +150,7 @@
     <MESSAGE value="Readme" />
     <MESSAGE value="delete readme.md" />
     <MESSAGE value="clear a line" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear a line" />
+    <MESSAGE value="adding some error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding some error handling" />
   </component>
 </project>

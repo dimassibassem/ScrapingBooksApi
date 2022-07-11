@@ -5,7 +5,25 @@
     <projectFile profileName="IIS Express">API/API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a50b4690-5f7d-4c5f-b882-d5d7cc9f00eb" name="Changes" comment="" />
+    <list default="true" id="a50b4690-5f7d-4c5f-b882-d5d7cc9f00eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/API/FileContentIndex/2f556927-466c-46ab-9f04-ef116709f1a9.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/API/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/API/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.metadata.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/api.projects.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/API.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/AbeBooks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AbeBooks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/AlManhal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AlManhal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/BookFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/BookFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/CairnLoginAndScrape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/CairnLoginAndScrape.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/Cpu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/Cpu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/amazon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/amazon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net6.0/API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net6.0/API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,15 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.API">
     <configuration name="API" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API/API.csproj" />
@@ -69,7 +87,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657313151945</updated>
-      <workItem from="1657313152966" duration="13587000" />
+      <workItem from="1657313152966" duration="13801000" />
+      <workItem from="1657526787402" duration="19988000" />
     </task>
     <task id="LOCAL-00001" summary="making some fixes">
       <created>1657395360422</created>
@@ -106,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657397301849</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="clear a line">
+      <created>1657397508232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657397508232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +140,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="making some fixes" />
@@ -121,6 +158,7 @@
     <MESSAGE value="adding Readme" />
     <MESSAGE value="Readme" />
     <MESSAGE value="delete readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete readme.md" />
+    <MESSAGE value="clear a line" />
+    <option name="LAST_COMMIT_MESSAGE" value="clear a line" />
   </component>
 </project>

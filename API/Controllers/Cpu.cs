@@ -20,7 +20,7 @@ namespace API.Controllers
                 var input = driver.FindElement(
                     By.XPath("//*[@id='woocommerce_product_search-2']/div/form/p[1]/input[1]"));
                 input.SendKeys(isbn);
-                
+
                 System.Threading.Thread.Sleep(2000);
                 var button =
                     driver.FindElement(By.XPath("//*[@id='woocommerce_product_search-2']/div/form/p[2]/button"));
@@ -31,8 +31,10 @@ namespace API.Controllers
                 var ISBN = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p[3]")).Text;
                 ISBN = ISBN.Substring(7);
                 var title = driver.FindElement(By.XPath("//div[1]/div[2]/div[1]/h1")).Text;
-                var editor = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p/strong")).Text;
-                var result = new {cover, editor, title, ISBN};
+
+                var editorString = driver.FindElement(By.XPath("//div[1]/div[2]/div[2]/div/p[2]")).Text;
+                var authors = editorString.Split(new[] {",", "et"}, StringSplitOptions.RemoveEmptyEntries);
+                var result = new {cover, title, ISBN, authors};
                 driver.Quit();
                 return Ok(result);
             }

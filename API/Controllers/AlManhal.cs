@@ -29,15 +29,16 @@ namespace API.Controllers
                     .GetAttribute("src");
                 var title = driver
                     .FindElement(By.XPath("/html/body/div[2]/div[5]/main/div/div/div/div/section[1]/h5/a")).Text;
-                var editor = driver
+                var editorString = driver
                     .FindElement(By.XPath(
-                        "/html/body/div[2]/div[5]/main/div/div/div/div/section[2]/div/div/div/div[1]/div[2]/div/label/a[2]"))
+                        "/html/body/div[2]/div[5]/main/div/div/div/div/section[2]/div/div/div/div[1]/div[2]/div"))
                     .Text;
+                var authors = editorString.Split(new[] {"|"}, StringSplitOptions.RemoveEmptyEntries);
                 var ISBN = driver
                     .FindElement(By.XPath(
                         "/html/body/div[2]/div[5]/main/div/div/div/div/section[2]/section/div/div[1]/div[6]/div/div[2]/label/a"))
                     .Text;
-                var result = new {cover, editor, title, ISBN};
+                var result = new {cover, title, ISBN, authors};
                 driver.Quit();
                 return Ok(result);
             }
@@ -45,7 +46,7 @@ namespace API.Controllers
             {
                 driver.Quit();
                 var error = new
-                {error = "Book not found"};
+                    {error = "Book not found"};
                 return Ok(error);
             }
         }

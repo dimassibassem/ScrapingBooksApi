@@ -5,7 +5,6 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Controllers
 {
-    
     [Route("api/[controller]/{*isbn}")]
     [ApiController]
     public class AbeBooksController : ControllerBase
@@ -23,10 +22,13 @@ namespace API.Controllers
                 var ISBN = driver.FindElement(By.XPath(
                     "/html/body/div[2]/main/div[6]/div[1]/div[2]/ul/li[1]/div[2]/div[1]/div[1]/p[3]/a/span[2]")).Text;
                 ISBN = ISBN.Substring(9, ISBN.Length - 10);
-                var editor = driver.FindElement(By.XPath(
+                var editorString = driver.FindElement(By.XPath(
                     "/html/body/div[2]/main/div[6]/div[1]/div[2]/ul/li[1]/div[2]/div[1]/div[1]/p[1]")).Text;
-                var title = driver.FindElement(By.XPath("/html/body/div[2]/main/div[6]/div[1]/div[2]/ul/li[1]/div[2]/div[1]/div[1]/h2/a/span")).Text;
-                var result = new {cover, editor, title, ISBN};
+                var authors = editorString.Split(new[] {";", "-", "/"}, StringSplitOptions.RemoveEmptyEntries);
+                var title = driver
+                    .FindElement(By.XPath(
+                        "/html/body/div[2]/main/div[6]/div[1]/div[2]/ul/li[1]/div[2]/div[1]/div[1]/h2/a/span")).Text;
+                var result = new {cover, title, ISBN, authors};
                 driver.Quit();
                 return Ok(result);
             }
@@ -36,7 +38,6 @@ namespace API.Controllers
                 var error = new {error = "Book not found"};
                 return Ok(error);
             }
-  
         }
     }
 }

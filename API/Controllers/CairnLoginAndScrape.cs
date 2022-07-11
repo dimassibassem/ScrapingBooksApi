@@ -12,15 +12,14 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            
             // still getting errors with this 
             // even I try to use the driver with free proxy, it still doesn't work
             ChromeOptions options = new ChromeOptions();
-            
+
             var PROXY_STR = "198.59.191.234:8080";
 
             options.AddArgument("--proxy-server=" + PROXY_STR);
-            
+
             IWebDriver driver;
             driver = new ChromeDriver(options);
             // driver = new ChromeDriver();

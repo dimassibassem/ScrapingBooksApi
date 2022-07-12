@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "M5kBUgJOtloEFeQlFbUVMGIh9XzyJkFoUDXFZ+b+6W9/wJSdqEMjWAuxfTcgCodod2DMAu6UrcvR1BSB3iPVzA==",
+  "dgSpecHash": "E/l9LElwMuDAW25jy3Tp2VEPiTair+8Ym8JA2KmNwxdaYrgG1i65yyu/BYjwX+nOfnQgVFVUaKSOkqDT5C+xcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ThinkPad\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\ThinkPad\\.nuget\\packages\\selenium.support\\4.3.0\\selenium.support.4.3.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\selenium.webdriver\\4.3.0\\selenium.webdriver.4.3.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",

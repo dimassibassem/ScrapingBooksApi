@@ -45,12 +45,12 @@ public class BLL_Cpu
                 By.XPath("//*[@id='woocommerce_product_search-2']/div/form/p[1]/input[1]"));
             input.SendKeys(isbn);
 
-            System.Threading.Thread.Sleep(2000);
+            Thread.Sleep(2000);
             var button =
                 driver.FindElement(By.XPath("//*[@id='woocommerce_product_search-2']/div/form/p[2]/button"));
             button.Click();
 
-            System.Threading.Thread.Sleep(5000);
+            Thread.Sleep(5000);
             var cover = driver.FindElement(By.ClassName("attachment-shop_single")).GetAttribute("src");
             var ISBN = js.ExecuteScript("const ps = document.querySelectorAll('p');" +
                                         "for (var i = 0; i < ps.length; i++) {" +

@@ -14,21 +14,24 @@ public class BLL_Home
         result = bll_BookFinder.GetInfoFromBookFinder(isbn);
         if (result.GetType().GetProperty("error") != null)
         {
-            result = bll_Amazon.GetInfoFromAmazon(isbn);
+            
+            result = bll_AbeBooks.GetInfoFromAbeBooks(isbn);
             if (result.GetType().GetProperty("error") != null)
             {
-                result = bll_AbeBooks.GetInfoFromAbeBooks(isbn);
+                
+                result = bll_Amazon.GetInfoFromAmazon(isbn);
                 if (result.GetType().GetProperty("error") != null)
                 {
-                    result = bll_Cpu.GetInfoFromCpu(isbn);
+                    
+                    result = bll_ALManhal.GetInfoFromALManhal(isbn);
                     if (result.GetType().GetProperty("error") != null)
                     {
-                        result = bll_ALManhal.GetInfoFromALManhal(isbn);
+                        result = bll_Cpu.GetInfoFromCpu(isbn);
                     }
                 }
             }
         }
+
         return result;
-        
     }
 }

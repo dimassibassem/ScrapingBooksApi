@@ -8,7 +8,9 @@ public class BLL_Amazon
     public object GetInfoFromAmazon(string isbn)
     {
         IWebDriver driver;
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless");
+        driver = new ChromeDriver(options);
         IJavaScriptExecutor js = (IJavaScriptExecutor) driver;
         try
         {

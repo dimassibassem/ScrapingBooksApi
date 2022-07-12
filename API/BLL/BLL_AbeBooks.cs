@@ -7,7 +7,9 @@ public class BLL_AbeBooks
     public object GetInfoFromAbeBooks(string isbn)
     {
         IWebDriver driver;
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless");
+        driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://www.abebooks.com/servlet/SearchResults?kn=" + isbn +

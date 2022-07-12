@@ -8,7 +8,9 @@ public class BLL_ALManhal
     public object GetInfoFromALManhal(string isbn)
     {
         IWebDriver driver;
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless");
+        driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://platform.almanhal.com/Search/Result?q=&sf_28_0_2=" + isbn +

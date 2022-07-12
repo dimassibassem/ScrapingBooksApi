@@ -15,7 +15,9 @@ public class BLL_Cpu
     public object GetInfoFromCpu(string isbn)
     {
         IWebDriver driver;
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless");
+        driver = new ChromeDriver(options);
         IJavaScriptExecutor js = (IJavaScriptExecutor) driver;
         try
         {
@@ -75,7 +77,6 @@ public class BLL_Cpu
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
             var error = new {error = "Book not found"};
             driver.Quit();
             return error;

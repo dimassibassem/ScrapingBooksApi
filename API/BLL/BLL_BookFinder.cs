@@ -8,7 +8,9 @@ public class BLL_BookFinder
     public object GetInfoFromBookFinder(string isbn)
     {
         IWebDriver driver;
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless");
+        driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://www.bookfinder.com/search/?author=&title=&lang=en&isbn=" + isbn +

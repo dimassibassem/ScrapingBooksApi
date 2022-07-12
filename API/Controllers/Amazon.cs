@@ -4,13 +4,13 @@ namespace API.Controllers
 {
     [Route("api/[controller]/{*isbn}")]
     [ApiController]
-    public class CpuController : ControllerBase
+    public class AmazonController : ControllerBase
     {
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_Cpu bll = new BLL_Cpu();
-            var infos = bll.GetInfoFromCpu(isbn);
+            BLL_Amazon bll = new BLL_Amazon();
+            var infos = bll.GetInfoFromAmazon(isbn);
             return Ok(infos);
         }
     }

@@ -28,3 +28,4 @@ C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\obj\Debug\net6.0\ref\API.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\WebDriver.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\WebDriver.Support.dll
+C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\RestSharp.dll

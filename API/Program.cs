@@ -1,3 +1,5 @@
+using API.BLL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +14,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    BLL_BNTDatabase bll = new BLL_BNTDatabase();
+    var infos = bll.GetBNTDatabase();
+    Console.WriteLine(infos);
     app.UseSwagger();
     app.UseSwaggerUI();
 }

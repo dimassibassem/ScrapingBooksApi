@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "API/1.0.0": {
         "dependencies": {
+          "RestSharp": "108.0.2-alpha.0.4",
           "Selenium.Support": "4.3.0",
           "Selenium.WebDriver": "4.3.0",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -30,6 +31,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "RestSharp/108.0.2-alpha.0.4": {
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {
+            "assemblyVersion": "108.0.2.0",
+            "fileVersion": "108.0.2.0"
           }
         }
       },
@@ -121,6 +130,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "RestSharp/108.0.2-alpha.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kT3Fu+JVvCUNh8SFAAvDqM9x8s5Xy1i2q9Ze7jt6mFhzfsJcU68c1OV47l+64i1V+7Pda0+VWuroCZ62EyJb7Q==",
+      "path": "restsharp/108.0.2-alpha.0.4",
+      "hashPath": "restsharp.108.0.2-alpha.0.4.nupkg.sha512"
     },
     "Selenium.Support/4.3.0": {
       "type": "package",

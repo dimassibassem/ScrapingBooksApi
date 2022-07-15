@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using API.Models;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -11,9 +12,9 @@ public class BLL_BNTDatabase
         const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
         var client = new RestClient(url);
         var request = new RestRequest();
-        var results = new List<object>();
+        var results = new List<Book>();
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             var body = @"{
 " + "\n" +
@@ -87,36 +88,29 @@ public class BLL_BNTDatabase
 
                 foreach (var item in fields)
                 {
-                    
-                    
-                    
                     // todo: need to fix this
-                    Regex r = new Regex(@"^[0-9]+$");
                     string s = item.Resource.Id.ToString();
-                    var isbn = item.Resource.Id > 5 && r.IsMatch(s) 
-                        ? (item.Resource.Id).Substring(5)
+                    var isbn = s.Length > 5 && s.StartsWith("isbn:")
+                        ? s.Substring(5)
                         : "";
-                    
-                    
-                    
-                    var rscId = item.Resource.RscId;
 
-                    results.Add(new Dictionary<string, dynamic>
+
+                    var rscId = item.Resource.RscId;
+                    Book book = new Book();
                     {
-                        {"Title", item.Resource.Ttl},
-                        {"Author", item.Resource.Crtr},
-                        {
-                            "Cover",
+                        book.Title = item.Resource.Ttl;
+                        book.Author = item.Resource.Crtr;
+                        book.Cover =
                             "https://www.bibliotheque.nat.tn/Ils/digitalCollection/DigitalCollectionThumbnailHandler.ashx?documentId=" +
                             rscId +
-                            "&size=LARGE&fallback=https%3a%2f%2fwww.bibliotheque.nat.tn%2fui%2fskins%2fBNT%2fportal%2ffront%2fimages%2fGeneral%2fDocType%2fMONO_LARGE.png"
-                        },
-                        {"ISBN", isbn},
-                        {"Date", item.Resource.Dt},
-                        {"Publisher", item.Resource.Pbls},
-                        {"Subject", item.Resource.Subj},
-                        {"Type", item.Resource.Type}
-                    });
+                            "&size=LARGE&fallback=https%3a%2f%2fwww.bibliotheque.nat.tn%2fui%2fskins%2fBNT%2fportal%2ffront%2fimages%2fGeneral%2fDocType%2fMONO_LARGE.png";
+                        book.ISBN = isbn;
+                        book.Date = item.Resource.Dt;
+                        book.Publisher = item.Resource.Pbls;
+                        book.Subject = item.Resource.Subj != null ? item.Resource.Subj : "";
+                        book.Type = item.Resource.Type;
+                        DAL.Insert.InsertBook(book);
+                    }
                 }
             }
         }

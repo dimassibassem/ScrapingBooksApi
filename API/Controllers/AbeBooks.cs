@@ -1,4 +1,4 @@
-﻿using API.BLL;
+﻿using API.Models.BLL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpenQA.Selenium;
@@ -13,7 +13,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_AbeBooks bll = new BLL_AbeBooks();
+            BllAbeBooks bll = new BllAbeBooks();
             var infos = bll.GetInfoFromAbeBooks(isbn);
             return Ok(infos);
         }

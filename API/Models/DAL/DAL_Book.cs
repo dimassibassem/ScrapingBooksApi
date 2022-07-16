@@ -1,15 +1,13 @@
 using System.Data.SqlClient;
-using API.Models;
+using API.DAL;
 
+namespace API.Models.DAL;
 
-namespace API.DAL;
-
-public class Insert
+public static class DalBook
 {
     public static void InsertBook(Book book)
     {
         var connection = DBConnection.GetConnection();
-        //open connection
         connection.Open();
 
         try

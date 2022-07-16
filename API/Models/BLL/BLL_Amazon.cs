@@ -1,16 +1,15 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_Amazon
+public class BllAmazon
 {
     public object GetInfoFromAmazon(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
         IJavaScriptExecutor js = (IJavaScriptExecutor) driver;
         try
         {
@@ -18,10 +17,9 @@ public class BLL_Amazon
                                       "%2Caps%2C190&ref=nb_sb_noss");
             var button = driver.FindElement(By.XPath(
                 "//*[@id='search']/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div[1]/span/a"));
-            System.Threading.Thread.Sleep(3000);
+            Thread.Sleep(3000);
             button.Click();
-            System.Threading.Thread.Sleep(5000);
-
+            Thread.Sleep(5000);
 
             var cover = driver
                 .FindElement(By.XPath(
@@ -41,12 +39,12 @@ public class BLL_Amazon
                                         "for (let i = 0; i < lis.length; i++)" +
                                         " {if(lis[i].querySelector('li>span>span').textContent.includes('ISBN-13')) return(lis[i].querySelector('li> span > span:nth-child(2)').textContent);}");
 
-            System.Threading.Thread.Sleep(5000);
+            Thread.Sleep(5000);
             var result = new {cover, title, ISBN, editor};
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             var error = new
             {

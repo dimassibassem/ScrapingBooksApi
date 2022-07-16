@@ -1,20 +1,20 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_BookFinder
+public class BllBookFinder
 {
     public object GetInfoFromBookFinder(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
-        options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        // options.AddArgument("--headless");
+        IWebDriver driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://www.bookfinder.com/search/?author=&title=&lang=en&isbn=" + isbn +
                                       "&new_used=*&destination=tn&currency=USD&mode=basic&st=sr&ac=qr");
+            Thread.Sleep(5000);
             var cover = driver.FindElement(By.XPath("//*[@id='coverImage']")).GetAttribute("src");
             var editorString = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/p")).Text;
             editorString = editorString.Substring(3);
@@ -26,7 +26,7 @@ public class BLL_BookFinder
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             var error = new
             {

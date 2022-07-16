@@ -1,18 +1,16 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_BNT
+public class BllBnt
 {
     public object GetInfoFromBNT(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
         driver.Navigate().GoToUrl("https://www.bnt.nat.tn");
         Thread.Sleep(2000);
         var input = driver.FindElement(By.Id("searchdata1"));
@@ -32,7 +30,7 @@ public class BLL_BNT
             driver.FindElement(By.XPath("//*[@id='hitlist']/ul/li[3]/ul[1]/li[3]/dl/dd[1]/a")).Click();
             Thread.Sleep(2000);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             // ignored
         }
@@ -49,7 +47,7 @@ public class BLL_BNT
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             driver.Quit();
             var error = new {error = "Book not found"};
@@ -59,10 +57,9 @@ public class BLL_BNT
 
     public object GetInfoFromBNTWithTitle(string typedTitle)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
 
         driver.Navigate().GoToUrl("https://www.bnt.nat.tn");
         Thread.Sleep(2000);
@@ -83,7 +80,7 @@ public class BLL_BNT
             driver.FindElement(By.XPath("//*[@id='hitlist']/ul/li[3]/ul[1]/li[3]/dl/dd[1]/a")).Click();
             Thread.Sleep(2000);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             // ignored
         }

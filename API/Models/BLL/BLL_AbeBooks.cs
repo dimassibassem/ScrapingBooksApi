@@ -1,15 +1,15 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-namespace API.BLL;
 
-public class BLL_AbeBooks
+namespace API.Models.BLL;
+
+public class BllAbeBooks
 {
     public object GetInfoFromAbeBooks(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://www.abebooks.com/servlet/SearchResults?kn=" + isbn +
@@ -28,7 +28,7 @@ public class BLL_AbeBooks
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             driver.Quit();
             var error = new {error = "Book not found"};

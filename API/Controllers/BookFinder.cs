@@ -1,4 +1,4 @@
-﻿using API.BLL;
+﻿using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
@@ -9,7 +9,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_BookFinder bll = new BLL_BookFinder();
+            BllBookFinder bll = new BllBookFinder();
             var infos = bll.GetInfoFromBookFinder(isbn);
             return Ok(infos);
         }

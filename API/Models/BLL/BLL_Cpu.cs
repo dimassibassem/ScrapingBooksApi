@@ -1,23 +1,27 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_Cpu
+public class BllCpu
 {
-    public static string Reverse(string str)
+    private static string? Reverse(string? str)
     {
-        char[] ch = str.ToCharArray();
-        Array.Reverse(ch);
-        return new string(ch);
+        char[]? ch = str?.ToCharArray();
+        if (ch != null)
+        {
+            Array.Reverse(ch);
+            return new string(ch);
+        }
+
+        return null;
     }
 
     public object GetInfoFromCpu(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
         IJavaScriptExecutor js = (IJavaScriptExecutor) driver;
         try
         {
@@ -60,22 +64,22 @@ public class BLL_Cpu
                                         "if(ps[i].textContent.includes('ISBN'))return(ps[i].textContent);" +
                                         "}");
 
-            if (ISBN.ToString().Contains("ت.د.م.ك"))
+            if (ISBN.ToString()!.Contains("ت.د.م.ك"))
             {
-                ISBN = ISBN.ToString().Replace("ت.د.م.ك. : ", "");
-                ISBN = Reverse(ISBN.ToString());
+                ISBN = ISBN.ToString()?.Replace("ت.د.م.ك. : ", "");
+                ISBN = Reverse(ISBN?.ToString());
             }
 
-            ISBN = ISBN.ToString().Replace("ISBN : ", "");
+            ISBN = ISBN?.ToString()?.Replace("ISBN : ", "");
             var title = driver.FindElement(By.XPath("//div[1]/div[2]/div[1]/h1")).Text;
             var editorString = js.ExecuteScript(
                 "return (document.querySelector('div.cmsmasters_single_product > div.summary.entry-summary.cmsmasters_product_right_column > div.cmsmasters_product_content > div > p > strong') != null ?  (document.querySelector('div.cmsmasters_single_product > div.summary.entry-summary.cmsmasters_product_right_column > div.cmsmasters_product_content > div > p > strong').textContent.includes(':') ? document.querySelector('div.cmsmasters_single_product > div.summary.entry-summary.cmsmasters_product_right_column > div.cmsmasters_product_content > div > p:nth-child(2) > strong').textContent : document.querySelector('div.cmsmasters_single_product > div.summary.entry-summary.cmsmasters_product_right_column > div.cmsmasters_product_content > div > p > strong').textContent) : document.querySelector('div.cmsmasters_single_product > div.summary.entry-summary.cmsmasters_product_right_column > div.cmsmasters_product_content > div > p:nth-child(2)').textContent)");
-            var authors = editorString.ToString().Split(new[] {",", "et"}, StringSplitOptions.RemoveEmptyEntries);
+            var authors = editorString.ToString()?.Split(new[] {",", "et"}, StringSplitOptions.RemoveEmptyEntries);
             var result = new {cover, title, ISBN, authors};
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             var error = new {error = "Book not found"};
             driver.Quit();

@@ -1,4 +1,4 @@
-using API.BLL;
+using API.Models.BLL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +14,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    BLL_BNTDatabase bll = new BLL_BNTDatabase();
+    BllBntDatabase bll = new BllBntDatabase();
     var infos = bll.GetBNTDatabase();
     Console.WriteLine(infos);
     app.UseSwagger();

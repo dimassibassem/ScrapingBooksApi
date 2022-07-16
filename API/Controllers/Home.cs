@@ -1,4 +1,4 @@
-using API.BLL;
+using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -10,7 +10,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_Home bll = new BLL_Home();
+            BllHome bll = new BllHome();
             var infos = bll.GetInfos(isbn);
             return Ok(infos);
         }

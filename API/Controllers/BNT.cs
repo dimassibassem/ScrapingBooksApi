@@ -1,4 +1,4 @@
-using API.BLL;
+using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -19,7 +19,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_BNT bll = new BLL_BNT();
+            BllBnt bll = new BllBnt();
             var infos = bll.GetInfoFromBNT(isbn);
             return Ok(infos);
         }
@@ -32,7 +32,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string title)
         {
-            BLL_BNT bll = new BLL_BNT();
+            BllBnt bll = new BllBnt();
             var infos = bll.GetInfoFromBNTWithTitle(title);
             return Ok(infos);
         }

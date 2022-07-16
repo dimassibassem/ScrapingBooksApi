@@ -1,25 +1,24 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_ALManhal
+public class BllAlManhal
 {
     public object GetInfoFromALManhal(string isbn)
     {
-        IWebDriver driver;
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
+        IWebDriver driver = new ChromeDriver(options);
         try
         {
             driver.Navigate().GoToUrl("https://platform.almanhal.com/Search/Result?q=&sf_28_0_2=" + isbn +
                                       "&opsf_28_0=1");
-            System.Threading.Thread.Sleep(5000);
+            Thread.Sleep(5000);
             var links = driver.FindElements(By.ClassName("btn-title-item-action"));
             var link = links[1].GetAttribute("href");
             driver.Navigate().GoToUrl(link);
-            System.Threading.Thread.Sleep(5000);
+            Thread.Sleep(5000);
             var cover = driver
                 .FindElement(By.XPath(
                     "/html/body/div[2]/div[5]/main/div/div/div/aside/div/div[1]/figure/a/div/img"))
@@ -39,7 +38,7 @@ public class BLL_ALManhal
             driver.Quit();
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             driver.Quit();
             var error = new

@@ -1,4 +1,4 @@
-﻿using API.BLL;
+﻿using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
@@ -9,7 +9,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BLL_ALManhal bll = new BLL_ALManhal();
+            BllAlManhal bll = new BllAlManhal();
             var infos = bll.GetInfoFromALManhal(isbn);
             return Ok(infos);
         }

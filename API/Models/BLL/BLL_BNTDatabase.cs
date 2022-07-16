@@ -1,11 +1,10 @@
-using System.Text.RegularExpressions;
-using API.Models;
+using API.Models.DAL;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace API.BLL;
+namespace API.Models.BLL;
 
-public class BLL_BNTDatabase
+public class BllBntDatabase
 {
     public object GetBNTDatabase()
     {
@@ -109,7 +108,7 @@ public class BLL_BNTDatabase
                         book.Publisher = item.Resource.Pbls;
                         book.Subject = item.Resource.Subj != null ? item.Resource.Subj : "";
                         book.Type = item.Resource.Type;
-                        DAL.Insert.InsertBook(book);
+                        DalBook.InsertBook(book);
                     }
                 }
             }

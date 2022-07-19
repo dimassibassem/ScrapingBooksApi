@@ -1,4 +1,5 @@
 using API.Models.BLL;
+using API.Models.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +16,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     BllBntDatabase bll = new BllBntDatabase();
-    var infos = bll.GetBNTDatabase();
-    Console.WriteLine(infos);
+    var res = await bll.GetBNTDatabase();
+    Console.WriteLine(res);
+
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }

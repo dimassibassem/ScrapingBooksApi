@@ -1,5 +1,4 @@
 using System.Data.SqlClient;
-using API.DAL;
 
 namespace API.Models.DAL;
 
@@ -8,10 +7,9 @@ public static class DalBook
     public static void InsertBook(Book book)
     {
         var connection = DBConnection.GetConnection();
-        connection.Open();
-
         try
         {
+            connection.Open();
             SqlCommand command =
                 new SqlCommand(
                     "INSERT INTO books (title, author, isbn, publisher, date, subject, type, cover)" +
@@ -34,5 +32,87 @@ public static class DalBook
             connection.Close();
             Console.WriteLine(e);
         }
+
+        connection.Close();
+    }
+
+    public static List<Book> GetBooks()
+    {
+        {
+            List<Book> lstBook = new List<Book>();
+            using SqlConnection connection = DBConnection.GetConnection();
+            connection.Open();
+            string sql = " SELECT * FROM Books";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        var b = new Book()
+                        {
+                            Id = dataReader["Id"].ToString(),
+                            Title = dataReader["Title"].ToString(),
+                            Author = dataReader["Author"].ToString(),
+                            Date = dataReader["Date"].ToString(),
+                            ISBN = dataReader["ISBN"].ToString(),
+                            Publisher = dataReader["Publisher"].ToString(),
+                            Subject = dataReader["Subject"].ToString(),
+                            Cover = dataReader["Cover"].ToString(),
+                            Type = dataReader["Type"].ToString()
+                        };
+
+                        lstBook.Add(b);
+                    }
+                }
+            }
+
+            connection.Close();
+
+            return lstBook;
+        }
+    }
+
+    public static Book GetBook(string isbn, string title)
+    {
+        using SqlConnection connection = DBConnection.GetConnection();
+            Book book = new Book();
+        try
+        {
+            connection.Open();
+            string sql = " SELECT * FROM Books WHERE ISBN = @isbn AND Title = @title";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@isbn", isbn);
+                command.Parameters.AddWithValue("@title", title);
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        book.Id = dataReader["Id"].ToString();
+                        book.Title = dataReader["Title"].ToString();
+                        book.Author = dataReader["Author"].ToString();
+                        book.Date = dataReader["Date"].ToString();
+                        book.ISBN = dataReader["ISBN"].ToString();
+                        book.Publisher = dataReader["Publisher"].ToString();
+                        book.Subject = dataReader["Subject"].ToString();
+                        book.Cover = dataReader["Cover"].ToString();
+                        book.Type = dataReader["Type"].ToString();
+                    }
+                }
+            }
+
+            connection.Close();
+          
+        }
+        catch (Exception e)
+        {
+            connection.Close();
+            Console.WriteLine(e);
+            throw;
+        }
+        return book;
     }
 }

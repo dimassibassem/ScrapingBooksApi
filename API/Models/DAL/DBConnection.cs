@@ -1,15 +1,15 @@
 using System.Data.SqlClient;
 
-namespace API.DAL;
+namespace API.Models.DAL;
 
-public class DBConnection
+public static class DBConnection
 {
-    static SqlConnection Connection = new("Data Source=localhost;Initial Catalog=books;User ID=SA;Password=yourStrong(!)Password");
+    static string DbConnnectionString = $"Data Source=localhost;Initial Catalog=books;User ID=SA;Password=yourStrong(!)Password";
 
 
     public static SqlConnection GetConnection()
     {
-        return Connection;
+        return new SqlConnection(DbConnnectionString);
     }
     
 }

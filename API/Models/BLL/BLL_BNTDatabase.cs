@@ -1,20 +1,21 @@
+using System.Text;
 using API.Models.DAL;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 
 namespace API.Models.BLL;
 
 public class BllBntDatabase
 {
-    public object GetBNTDatabase()
+    public async Task<JObject> GetBNTDatabase()
     {
-        const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
-        var client = new RestClient(url);
-        var request = new RestRequest();
-        var results = new List<Book>();
-
+        var obj = new JObject();
+            const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
         for (int i = 0; i < 3; i++)
         {
+            // var client = new RestClient(url);
+            HttpClient client = new HttpClient();
             var body = @"{
 " + "\n" +
                        @"    ""query"": {
@@ -73,47 +74,63 @@ public class BllBntDatabase
 " + "\n" +
                        @"    },
 " + "\n" +
-                       @"    ""sst"": 4
+                       @"    ""sst"":4
 " + "\n" +
                        @"}";
-            request.AddJsonBody(body);
-            RestResponse response = client.Post(request);
-            // deserialize the response body to json object
-            if (response.Content != null)
+            // var request = new RestRequest();
+            // request.AddJsonBody(body);
+            // var postData = new List<KeyValuePair<string, string>>()
+            // {
+            //     new("query", body)
+            // };
+
+            // var content = body.ToString();
+            //
+            // var response = await client.PostAsync(url, body);
+          var response = await client.PostAsync(url, new StringContent(body, Encoding.UTF8, "application/json"));
+          var responseString = "";
+
+            if (response.IsSuccessStatusCode)
             {
-                var json = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                responseString = await response.Content.ReadAsStringAsync();
+                obj = JObject.Parse(responseString);
+            }
 
+         
+            if (responseString != "")
+            {
+                var json = JsonConvert.DeserializeObject<dynamic>(responseString);
+            
                 var fields = json.d.Results;
-
+            
                 foreach (var item in fields)
                 {
-                    // todo: need to fix this
                     string s = item.Resource.Id.ToString();
                     var isbn = s.Length > 5 && s.StartsWith("isbn:")
                         ? s.Substring(5)
                         : "";
-
-
+            
+            
                     var rscId = item.Resource.RscId;
                     Book book = new Book();
                     {
                         book.Title = item.Resource.Ttl;
-                        book.Author = item.Resource.Crtr;
+                        book.Author = item.Resource.Crtr != null ? item.Resource.Crtr : "";
                         book.Cover =
                             "https://www.bibliotheque.nat.tn/Ils/digitalCollection/DigitalCollectionThumbnailHandler.ashx?documentId=" +
                             rscId +
                             "&size=LARGE&fallback=https%3a%2f%2fwww.bibliotheque.nat.tn%2fui%2fskins%2fBNT%2fportal%2ffront%2fimages%2fGeneral%2fDocType%2fMONO_LARGE.png";
                         book.ISBN = isbn;
-                        book.Date = item.Resource.Dt;
-                        book.Publisher = item.Resource.Pbls;
+                        book.Date = item.Resource.Dt != null ? item.Resource.Dt : "";
+                        book.Publisher = item.Resource.Pbls != null ? item.Resource.Pbls : "";
                         book.Subject = item.Resource.Subj != null ? item.Resource.Subj : "";
-                        book.Type = item.Resource.Type;
-                        DalBook.InsertBook(book);
+                        book.Type = item.Resource.Type != null ? item.Resource.Type : "";
                     }
+                    DalBook.InsertBook(book);
                 }
             }
         }
 
-        return results;
+        return obj;
     }
 }

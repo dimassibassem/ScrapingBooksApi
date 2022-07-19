@@ -11,7 +11,7 @@ public class BllBntDatabase
     public async Task<JObject> GetBNTDatabase()
     {
         var obj = new JObject();
-            const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
+        const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
         for (int i = 0; i < 3; i++)
         {
             // var client = new RestClient(url);
@@ -87,8 +87,8 @@ public class BllBntDatabase
             // var content = body.ToString();
             //
             // var response = await client.PostAsync(url, body);
-          var response = await client.PostAsync(url, new StringContent(body, Encoding.UTF8, "application/json"));
-          var responseString = "";
+            var response = await client.PostAsync(url, new StringContent(body, Encoding.UTF8, "application/json"));
+            var responseString = "";
 
             if (response.IsSuccessStatusCode)
             {
@@ -96,21 +96,21 @@ public class BllBntDatabase
                 obj = JObject.Parse(responseString);
             }
 
-         
+
             if (responseString != "")
             {
                 var json = JsonConvert.DeserializeObject<dynamic>(responseString);
-            
+
                 var fields = json.d.Results;
-            
+
                 foreach (var item in fields)
                 {
                     string s = item.Resource.Id.ToString();
                     var isbn = s.Length > 5 && s.StartsWith("isbn:")
                         ? s.Substring(5)
                         : "";
-            
-            
+
+
                     var rscId = item.Resource.RscId;
                     Book book = new Book();
                     {
@@ -126,7 +126,12 @@ public class BllBntDatabase
                         book.Subject = item.Resource.Subj != null ? item.Resource.Subj : "";
                         book.Type = item.Resource.Type != null ? item.Resource.Type : "";
                     }
-                    DalBook.InsertBook(book);
+                    var b = DalBook.GetBook(book.ISBN, book.Title);
+                    //check if book is already in database
+                    if (b.Id == null)
+                    {
+                        DalBook.InsertBook(book);
+                    }
                 }
             }
         }

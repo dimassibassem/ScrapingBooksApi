@@ -44,9 +44,9 @@
               "target": "Package",
               "version": "[7.0.0-preview.6.22329.4, )"
             },
-            "RestSharp": {
+            "Quartz": {
               "target": "Package",
-              "version": "[108.0.2-alpha.0.4, )"
+              "version": "[3.4.0, )"
             },
             "Selenium.Support": {
               "target": "Package",

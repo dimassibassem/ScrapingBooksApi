@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KWB/8UccqDw2+MfPREQHCFDqH7UZECZh8CTGkofMoe3c7oiIWSGHgZ8N7nG1k6UtOtjtl2Qb/VxqSPg91iPgIQ==",
+  "dgSpecHash": "1p7I4RXulc+sDDib8stgqI8RwEx9rYZPjljrpjL0clCPIY3IDHalwI3nINH4sg8/WRGf9sQFDAMfOdSHP0V5MQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -38,7 +38,7 @@
     "C:\\Users\\ThinkPad\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\ThinkPad\\.nuget\\packages\\restsharp\\108.0.2-alpha.0.4\\restsharp.108.0.2-alpha.0.4.nupkg.sha512",
+    "C:\\Users\\ThinkPad\\.nuget\\packages\\quartz\\3.4.0\\quartz.3.4.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

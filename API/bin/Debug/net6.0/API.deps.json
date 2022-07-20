@@ -9,7 +9,7 @@
       "API/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.6.22329.4",
-          "RestSharp": "108.0.2-alpha.0.4",
+          "Quartz": "3.4.0",
           "Selenium.Support": "4.3.0",
           "Selenium.WebDriver": "4.3.0",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -395,11 +395,16 @@
           }
         }
       },
-      "RestSharp/108.0.2-alpha.0.4": {
+      "Quartz/3.4.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0-preview.6.22324.4",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Diagnostics.DiagnosticSource": "5.0.0"
+        },
         "runtime": {
-          "lib/net6.0/RestSharp.dll": {
-            "assemblyVersion": "108.0.2.0",
-            "fileVersion": "108.0.2.0"
+          "lib/netstandard2.0/Quartz.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
           }
         }
       },
@@ -984,12 +989,12 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
-    "RestSharp/108.0.2-alpha.0.4": {
+    "Quartz/3.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kT3Fu+JVvCUNh8SFAAvDqM9x8s5Xy1i2q9Ze7jt6mFhzfsJcU68c1OV47l+64i1V+7Pda0+VWuroCZ62EyJb7Q==",
-      "path": "restsharp/108.0.2-alpha.0.4",
-      "hashPath": "restsharp.108.0.2-alpha.0.4.nupkg.sha512"
+      "sha512": "sha512-N8350OAlQhd8zKg0ARFikGjh3bfAW/CF/KVxu2fTIlAALB/oC1eg54n/QAPYR5ryHuYyDr5G8/Qa4k+D/7OFRQ==",
+      "path": "quartz/3.4.0",
+      "hashPath": "quartz.3.4.0.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",

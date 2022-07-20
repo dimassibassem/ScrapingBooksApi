@@ -1,3 +1,4 @@
+using API.Job;
 using API.Models.BLL;
 using API.Models.DAL;
 
@@ -15,10 +16,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    BllBntDatabase bll = new BllBntDatabase();
-    var res = await bll.GetBNTDatabase();
-    Console.WriteLine(res);
 
+    var todo = new CronJob();
+    // runs every month on the 1st day of the month at 00:00
+    await todo.Task1();
 
     app.UseSwagger();
     app.UseSwaggerUI();

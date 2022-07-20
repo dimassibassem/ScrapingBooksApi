@@ -28,7 +28,6 @@ C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\obj\Debug\net6.0\ref\API.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\WebDriver.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\WebDriver.Support.dll
-C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\RestSharp.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Azure.Identity.dll
@@ -80,3 +79,4 @@ C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\runtimes\win-
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ThinkPad\OneDrive\Bureau\c#\book\API\API\bin\Debug\net6.0\Quartz.dll

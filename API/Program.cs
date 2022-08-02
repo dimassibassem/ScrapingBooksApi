@@ -16,12 +16,20 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-   var res = BLL_BiruniDatbase.GetBiruniDatabase();
-   // Console.WriteLine(res);
+    // by decommenting the line below, you can enable scraping from Biruni website
+    // and set results to database.
 
-    // var todo = new CronJob();
-    // runs every month on the 1st day of the month at 00:00
-    // await todo.Task1();
+    //BLL_BiruniDatbase.GetBiruniDatabase();
+
+    
+    
+    
+    // By decommenting the block below, you can enable scraping from BNT website
+    // and set results to database.
+    // it's a task that runs every month on the 1st day of the month at 00:00
+
+    /*var todo = new CronJob();
+    await todo.Task1();*/
 
     app.UseSwagger();
     app.UseSwaggerUI();

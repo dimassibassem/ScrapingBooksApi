@@ -32,4 +32,43 @@ public class DALBiruniBook
 
         connection.Close();
     }
+    
+    public static BiruniBook GetBiruniBook(string title)
+    {
+        using SqlConnection connection = DBConnection.GetConnection();
+        BiruniBook book = new BiruniBook();
+        try
+        {
+            connection.Open();
+            string sql = " SELECT * FROM BiruniBook WHERE Title = @title";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@title", title);
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        book.Id = dataReader["Id"].ToString();
+                        book.Title = dataReader["Title"].ToString();
+                        book.Author = dataReader["Author"].ToString();
+                        book.ISBN = dataReader["ISBN"].ToString();
+                        book.Edition = dataReader["Edition"].ToString();
+                        book.Collection = dataReader["Collection"].ToString();
+                        book.Cover = dataReader["Cover"].ToString();
+                    }
+                }
+            }
+
+            connection.Close();
+          
+        }
+        catch (Exception e)
+        {
+            connection.Close();
+            Console.WriteLine(e);
+            throw;
+        }
+        return book;
+    }
 }

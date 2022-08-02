@@ -19,7 +19,7 @@ if (app.Environment.IsDevelopment())
     // by decommenting the line below, you can enable scraping from Biruni website
     // and set results to database.
 
-    //BLL_BiruniDatbase.GetBiruniDatabase();
+   // BLL_BiruniDatbase.GetBiruniDatabase();
 
     
     

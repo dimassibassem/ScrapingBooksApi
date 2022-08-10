@@ -1,5 +1,6 @@
 using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
+
 namespace API.Controllers
 {
     [Route("api/[controller]/{*title}")]
@@ -9,9 +10,8 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string title)
         {
-           BLL_BiruniDatbase bll = new BLL_BiruniDatbase();
-              var result = bll.GetBiruniBooksByTitle(title);
-                return Ok(result);
+            var result = BLL_BiruniDatbase.GetBiruniBooksByTitle(title);
+            return Ok(result);
         }
     }
 }

@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Models.BLL;
 
-public class BLL_BiruniDatbase
+public static class BLL_BiruniDatbase
 {
     public static void GetBiruniDatabase()
     {
@@ -104,7 +104,7 @@ public class BLL_BiruniDatbase
     }
     
     
-    public object GetBiruniBooksByTitle(string title)
+    public static object GetBiruniBooksByTitle(string title)
     {
         ChromeOptions options = new ChromeOptions();
         // options.AddArgument("--headless");

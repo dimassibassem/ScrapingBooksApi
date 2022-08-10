@@ -29,7 +29,7 @@ if (app.Environment.IsDevelopment())
     // it's a task that runs every month on the 1st day of the month at 00:00
 
     /*var todo = new CronJob();
-    await todo.Task1();*/
+     await todo.Task1();*/
 
     app.UseSwagger();
     app.UseSwaggerUI();

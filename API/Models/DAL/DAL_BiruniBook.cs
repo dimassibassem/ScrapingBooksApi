@@ -13,8 +13,8 @@ public static class DalBiruniBook
             var sqlRequest =
                 "INSERT INTO BiruniBook (title, author, isbn,edition,collection, cover) VALUES (@title, @author, @isbn,@edition,@collection, @cover)";
             SqlCommand command =
-                new SqlCommand(
-                    sqlRequest, connection);
+                new SqlCommand(sqlRequest, connection);
+
             if (book.Title != null) command.Parameters.AddWithValue("@title", book.Title);
             if (book.Author != null) command.Parameters.AddWithValue("@author", book.Author);
             if (book.ISBN != null) command.Parameters.AddWithValue("@isbn", book.ISBN);

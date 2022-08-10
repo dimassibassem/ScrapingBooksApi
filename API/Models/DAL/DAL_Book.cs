@@ -10,11 +10,11 @@ public static class DalBook
         try
         {
             connection.Open();
+            var sqlRequest =
+                "INSERT INTO books (title, author, isbn, publisher, date, subject, type, cover) VALUES (@title, @author, @isbn, @publisher, @date, @subject, @type, @cover)";
             SqlCommand command =
-                new SqlCommand(
-                    "INSERT INTO books (title, author, isbn, publisher, date, subject, type, cover)" +
-                    "  VALUES (@title, @author, @isbn, @publisher, @date, @subject, @type, @cover)",
-                    connection);
+                new SqlCommand(sqlRequest, connection);
+
             if (book.Title != null) command.Parameters.AddWithValue("@title", book.Title);
             if (book.Author != null) command.Parameters.AddWithValue("@author", book.Author);
             if (book.ISBN != null) command.Parameters.AddWithValue("@isbn", book.ISBN);
@@ -77,7 +77,7 @@ public static class DalBook
     public static Book GetBook(string isbn, string title)
     {
         using SqlConnection connection = DbConnection.GetConnection();
-            Book book = new Book();
+        Book book = new Book();
         try
         {
             connection.Open();
@@ -105,7 +105,6 @@ public static class DalBook
             }
 
             connection.Close();
-          
         }
         catch (Exception e)
         {
@@ -113,6 +112,7 @@ public static class DalBook
             Console.WriteLine(e);
             throw;
         }
+
         return book;
     }
 }

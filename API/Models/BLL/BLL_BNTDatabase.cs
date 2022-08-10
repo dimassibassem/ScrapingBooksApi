@@ -5,9 +5,9 @@ using Newtonsoft.Json.Linq;
 
 namespace API.Models.BLL;
 
-public class BllBntDatabase
+public static class BllBntDatabase
 {
-    public async Task<JObject> GetBNTDatabase()
+    public static async Task<JObject> GetBntDatabase()
     {
         var obj = new JObject();
         const string url = "https://www.bibliotheque.nat.tn/BNT/Portal/Recherche/Search.svc/Search";
@@ -77,7 +77,7 @@ public class BllBntDatabase
                       @"    ""sst"":4
 " + "\n" +
                       @"}";
-        
+
         var res = await cl.PostAsync(url, new StringContent(reqBody, Encoding.UTF8, "application/json"));
         var resString = "";
 
@@ -93,7 +93,7 @@ public class BllBntDatabase
             var jsonObject = JsonConvert.DeserializeObject<dynamic>(resString);
 
             var maxPages = jsonObject.d.SearchInfo.PageMax;
-            maxPagesInt = Convert.ToInt32(maxPages);    
+            maxPagesInt = Convert.ToInt32(maxPages);
         }
 
 
@@ -161,7 +161,7 @@ public class BllBntDatabase
                        @"    ""sst"":4
 " + "\n" +
                        @"}";
- 
+
             var response = await client.PostAsync(url, new StringContent(body, Encoding.UTF8, "application/json"));
             var responseString = "";
 

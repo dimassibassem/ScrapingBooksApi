@@ -24,8 +24,8 @@ class CronJob
         public async Task Execute(IJobExecutionContext context)
         {
             await Console.Out.WriteLineAsync("Task Started");
-            BllBntDatabase bll = new BllBntDatabase();
-            var res = await bll.GetBNTDatabase();
+
+            var res = await BllBntDatabase.GetBntDatabase();
             await Console.Out.WriteLineAsync((string?) res);
         }
     }

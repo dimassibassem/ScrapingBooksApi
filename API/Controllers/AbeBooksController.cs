@@ -13,8 +13,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BllAbeBooks bll = new BllAbeBooks();
-            var infos = bll.GetInfoFromAbeBooks(isbn);
+            var infos = BllAbeBooks.GetInfoFromAbeBooks(isbn);
             return Ok(infos);
         }
     }

@@ -10,10 +10,11 @@ public static class DalBiruniBook
         try
         {
             connection.Open();
+            var sqlRequest =
+                "INSERT INTO BiruniBook (title, author, isbn,edition,collection, cover) VALUES (@title, @author, @isbn,@edition,@collection, @cover)";
             SqlCommand command =
                 new SqlCommand(
-                    "INSERT INTO BiruniBook (title, author, isbn,edition,collection, cover)" +
-                    "  VALUES (@title, @author, @isbn,@edition,@collection, @cover)", connection);
+                    sqlRequest, connection);
             if (book.Title != null) command.Parameters.AddWithValue("@title", book.Title);
             if (book.Author != null) command.Parameters.AddWithValue("@author", book.Author);
             if (book.ISBN != null) command.Parameters.AddWithValue("@isbn", book.ISBN);

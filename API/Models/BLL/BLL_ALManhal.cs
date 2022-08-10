@@ -3,9 +3,9 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Models.BLL;
 
-public class BllAlManhal
+public static class BllAlManhal
 {
-    public object GetInfoFromALManhal(string isbn)
+    public static object GetInfoFromAlManhal(string isbn)
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");

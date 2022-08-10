@@ -3,9 +3,9 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Models.BLL;
 
-public class BllAmazon
+public static class BllAmazon
 {
-    public object GetInfoFromAmazon(string isbn)
+    public static object GetInfoFromAmazon(string isbn)
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");

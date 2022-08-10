@@ -2,11 +2,11 @@ using System.Data.SqlClient;
 
 namespace API.Models.DAL;
 
-public class DALBiruniBook
+public static class DalBiruniBook
 {
     public static void InsertBook(BiruniBook book)
     {
-        var connection = DBConnection.GetConnection();
+        var connection = DbConnection.GetConnection();
         try
         {
             connection.Open();
@@ -35,7 +35,7 @@ public class DALBiruniBook
 
     public static BiruniBook GetBiruniBook(string title, string isbn, string edition)
     {
-        using SqlConnection connection = DBConnection.GetConnection();
+        using SqlConnection connection = DbConnection.GetConnection();
         BiruniBook book = new BiruniBook();
         try
         {

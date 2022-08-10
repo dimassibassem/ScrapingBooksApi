@@ -82,10 +82,10 @@ public static class BLL_BiruniDatbase
                         Collection = detail["collection"]?.ToString(),
                         Cover = detail["cover"]?.ToString()
                     };
-                    var isExist = DALBiruniBook.GetBiruniBook(biruniBook.Title,biruniBook.ISBN,biruniBook.Edition);
+                    var isExist = DalBiruniBook.GetBiruniBook(biruniBook.Title,biruniBook.ISBN,biruniBook.Edition);
                     if (isExist.Id == null)
                     {
-                        DALBiruniBook.InsertBook(biruniBook);
+                        DalBiruniBook.InsertBook(biruniBook);
                     }
                 }
                 
@@ -171,10 +171,10 @@ public static class BLL_BiruniDatbase
                         Collection = detail["collection"]?.ToString(),
                         Cover = detail["cover"]?.ToString()
                     };
-                    var isExist = DALBiruniBook.GetBiruniBook(biruniBook.Title,biruniBook.ISBN,biruniBook.Edition);
+                    var isExist = DalBiruniBook.GetBiruniBook(biruniBook.Title,biruniBook.ISBN,biruniBook.Edition);
                     list.Add(biruniBook);
                     if (isExist.Id != null) continue;
-                    DALBiruniBook.InsertBook(biruniBook);
+                    DalBiruniBook.InsertBook(biruniBook);
                 }
                 driver.Quit();
                 return list;

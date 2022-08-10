@@ -6,7 +6,7 @@ public static class DalBook
 {
     public static void InsertBook(Book book)
     {
-        var connection = DBConnection.GetConnection();
+        var connection = DbConnection.GetConnection();
         try
         {
             connection.Open();
@@ -40,7 +40,7 @@ public static class DalBook
     {
         {
             List<Book> lstBook = new List<Book>();
-            using SqlConnection connection = DBConnection.GetConnection();
+            using SqlConnection connection = DbConnection.GetConnection();
             connection.Open();
             string sql = " SELECT * FROM Books";
 
@@ -76,7 +76,7 @@ public static class DalBook
 
     public static Book GetBook(string isbn, string title)
     {
-        using SqlConnection connection = DBConnection.GetConnection();
+        using SqlConnection connection = DbConnection.GetConnection();
             Book book = new Book();
         try
         {

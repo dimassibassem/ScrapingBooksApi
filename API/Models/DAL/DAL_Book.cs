@@ -50,7 +50,7 @@ public static class DalBook
                 {
                     while (dataReader.Read())
                     {
-                        var b = new Book()
+                        var b = new Book
                         {
                             Id = dataReader["Id"].ToString(),
                             Title = dataReader["Title"].ToString(),

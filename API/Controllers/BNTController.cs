@@ -1,7 +1,7 @@
 using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers;
 
 // I don't recommend using this controller
 // the "BNT" website used in this controller
@@ -10,29 +10,22 @@ namespace API.Controllers
 // and it have a lot of errors in the search
 // especially in the search with ISBN number
 
-
+[Route("api/[controller]")]
+[ApiController]
+public class BntController : ControllerBase
 {
-    [Route("api/[controller]/{*isbn}")]
-    [ApiController]
-    public class BntController : ControllerBase
+    [HttpGet("ISBN")]
+    public IActionResult GetByIsbn(string isbn)
     {
-        [HttpGet()]
-        public IActionResult Get(string isbn)
-        {
-            var infos = BllBnt.GetInfoFromBnt(isbn);
-            return Ok(infos);
-        }
+        var infos = BllBnt.GetInfoFromBnt(isbn);
+        return Ok(infos);
     }
 
-    [Route("api/BNT/title/{*title}")]
-    [ApiController]
-    public class BntWithTitle : ControllerBase
+
+    [HttpGet("Title")]
+    public IActionResult GetByTitle(string title)
     {
-        [HttpGet()]
-        public IActionResult Get(string title)
-        {
-            var infos = BllBnt.GetInfoFromBntWithTitle(title);
-            return Ok(infos);
-        }
+        var infos = BllBnt.GetInfoFromBntWithTitle(title);
+        return Ok(infos);
     }
 }

@@ -21,16 +21,14 @@ if (app.Environment.IsDevelopment())
 
    // BLL_BiruniDatbase.GetBiruniDatabase();
 
-    
-    
-    
-    // By decommenting the block below, you can enable scraping from BNT website
+   
+    // By uncommenting the block below, you can enable scraping from BNT website
     // and set results to database.
     // it's a task that runs every month on the 1st day of the month at 00:00
 
     /*var todo = new CronJob();
      await todo.Task1();*/
-
+    
     app.UseSwagger();
     app.UseSwaggerUI();
 }

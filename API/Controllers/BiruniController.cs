@@ -10,7 +10,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string title)
         {
-            var result = BLL_BiruniDatbase.GetBiruniBooksByTitle(title);
+            var result = BllBiruniDatabase.GetBiruniBooksByTitle(title);
             return Ok(result);
         }
     }

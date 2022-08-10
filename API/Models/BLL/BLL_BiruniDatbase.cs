@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Models.BLL;
 
-public static class BLL_BiruniDatbase
+public static class BllBiruniDatabase
 {
     public static void GetBiruniDatabase()
     {

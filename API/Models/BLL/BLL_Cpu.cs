@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace API.Models.BLL;
 
-public class BllCpu
+public static class BllCpu
 {
     private static string? Reverse(string? str)
     {
@@ -17,7 +17,7 @@ public class BllCpu
         return null;
     }
 
-    public object GetInfoFromCpu(string isbn)
+    public static object GetInfoFromCpu(string isbn)
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");

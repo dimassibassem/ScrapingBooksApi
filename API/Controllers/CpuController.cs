@@ -1,5 +1,6 @@
 ﻿using API.Models.BLL;
 using Microsoft.AspNetCore.Mvc;
+
 namespace API.Controllers
 {
     [Route("api/[controller]/{*isbn}")]
@@ -9,8 +10,7 @@ namespace API.Controllers
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BllCpu bll = new BllCpu();
-            var infos = bll.GetInfoFromCpu(isbn);
+            var infos = BllCpu.GetInfoFromCpu(isbn);
             return Ok(infos);
         }
     }

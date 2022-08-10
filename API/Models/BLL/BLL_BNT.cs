@@ -4,9 +4,9 @@ using OpenQA.Selenium.Support.UI;
 
 namespace API.Models.BLL;
 
-public class BllBnt
+public static class BllBnt
 {
-    public object GetInfoFromBNT(string isbn)
+    public static object GetInfoFromBnt(string isbn)
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");
@@ -55,7 +55,7 @@ public class BllBnt
         }
     }
 
-    public object GetInfoFromBNTWithTitle(string typedTitle)
+    public static object GetInfoFromBntWithTitle(string typedTitle)
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArgument("--headless");

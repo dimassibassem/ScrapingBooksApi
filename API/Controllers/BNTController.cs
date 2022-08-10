@@ -14,26 +14,24 @@ namespace API.Controllers
 {
     [Route("api/[controller]/{*isbn}")]
     [ApiController]
-    public class BNTController : ControllerBase
+    public class BntController : ControllerBase
     {
         [HttpGet()]
         public IActionResult Get(string isbn)
         {
-            BllBnt bll = new BllBnt();
-            var infos = bll.GetInfoFromBNT(isbn);
+            var infos = BllBnt.GetInfoFromBnt(isbn);
             return Ok(infos);
         }
     }
 
     [Route("api/BNT/title/{*title}")]
     [ApiController]
-    public class BNT_with_title : ControllerBase
+    public class BntWithTitle : ControllerBase
     {
         [HttpGet()]
         public IActionResult Get(string title)
         {
-            BllBnt bll = new BllBnt();
-            var infos = bll.GetInfoFromBNTWithTitle(title);
+            var infos = BllBnt.GetInfoFromBntWithTitle(title);
             return Ok(infos);
         }
     }

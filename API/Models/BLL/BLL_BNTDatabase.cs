@@ -1,5 +1,6 @@
 using System.Text;
 using API.Models.DAL;
+using API.Models.Entity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

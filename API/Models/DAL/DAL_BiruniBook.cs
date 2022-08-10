@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using API.Models.Entity;
 
 namespace API.Models.DAL;
 

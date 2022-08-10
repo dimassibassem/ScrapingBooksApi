@@ -1,8 +1,5 @@
 ﻿using API.Models.BLL;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace API.Controllers
 {

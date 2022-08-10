@@ -2,7 +2,7 @@ using API.Models.BLL;
 using Quartz;
 using Quartz.Impl;
 
-namespace API.Job;
+namespace API.Models.Entity;
 
 class CronJob
 {

@@ -1,6 +1,6 @@
-using API.Job;
 using API.Models.BLL;
 using API.Models.DAL;
+using API.Models.Entity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +19,8 @@ if (app.Environment.IsDevelopment())
     // by decommenting the line below, you can enable scraping from Biruni website
     // and set results to database.
 
-   // BLL_BiruniDatbase.GetBiruniDatabase();
+   // BllBiruniDatabase.GetBiruniDatabase();
+  
 
    
     // By uncommenting the block below, you can enable scraping from BNT website

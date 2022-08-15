@@ -1,6 +1,6 @@
 using System.Data.SqlClient;
 
-namespace API.Models.DAL;
+namespace API.Models;
 
 public static class DbConnection
 {

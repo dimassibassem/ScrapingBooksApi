@@ -116,7 +116,7 @@ public static class BllBiruniDatabase
          try
         {
             driver.Navigate().GoToUrl("http://www.biruni.tn/catalogue-universitaire.php");
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             var button = driver.FindElement(By.XPath(
                 "/html/body/ul/li[4]/div/div/div/table/tbody[4]/tr/td/ul/li/div/div/div[2]/ul/li/div/div[1]/ul/li/form/table/tbody[2]/tr/td[2]/div/div/div/div"));
             var pagination = driver.FindElement(By.Id("NB_ITEM_PER_PAGE_INPUT_hidden"));
@@ -125,9 +125,9 @@ public static class BllBiruniDatabase
             Thread.Sleep(2000);
             input.SendKeys(title);
             Thread.Sleep(3000);
-            js.ExecuteScript("arguments[0].value = 100", pagination);
+            js.ExecuteScript("arguments[0].value = 10", pagination);
             button.Click();
-            Thread.Sleep(8000);
+            Thread.Sleep(11000);
 
             
 

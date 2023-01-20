@@ -12,6 +12,7 @@
           "Quartz": "3.4.0",
           "Selenium.Support": "4.3.0",
           "Selenium.WebDriver": "4.3.0",
+          "Selenium.WebDriver.ChromeDriver": "109.0.5414.7400",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Data.SqlClient": "4.8.3"
         },
@@ -464,6 +465,7 @@
           }
         }
       },
+      "Selenium.WebDriver.ChromeDriver/109.0.5414.7400": {},
       "Swashbuckle.AspNetCore/6.2.3": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
@@ -1037,6 +1039,13 @@
       "sha512": "sha512-dDRbNrpzmII+ZnPLJF7ka2nygR/jnY0BfIl2rsyp1TJXQmr2ayv9tzq1ZBwqwRc1LkHC5zFAi1X3yboFWp0j+Q==",
       "path": "selenium.webdriver/4.3.0",
       "hashPath": "selenium.webdriver.4.3.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver.ChromeDriver/109.0.5414.7400": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eTclb0YvUFujj9MCe3RfQvZA9LRcazmqoYzqmrOdW/FMhossjXOpbiaLsUsI84EDNFZQlkRMq4S61XmUtzZOaw==",
+      "path": "selenium.webdriver.chromedriver/109.0.5414.7400",
+      "hashPath": "selenium.webdriver.chromedriver.109.0.5414.7400.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj": {}
+    "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\New Projects\\c#\\book\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj": {
+    "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\New Projects\\c#\\book\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\New Projects\\c#\\book\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\New Projects\\c#\\book\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\c#\\book\\API\\API\\obj\\",
+        "outputPath": "C:\\Users\\ThinkPad\\OneDrive\\Bureau\\New Projects\\c#\\book\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[109.0.5414.7400, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -71,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -83,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
